@@ -6,6 +6,10 @@
 }
 
 .sidebar-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   background-color: global.$black;
   top: 0;
@@ -13,6 +17,38 @@
   z-index: 99;
   width: 25%;
   height: 100%;
+  .show-full {
+    height: 100%;
+  }
+  .show {
+    height: 30%;
+  }
+  .hide {
+    height: 0;
+  }
+  .sidebar-content-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: global.$white;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Comfortaa", cursive;
+    text-align: center;
+    .sidebar-list-element {
+      transition: letter-spacing 0.1s;
+      &:hover {
+        font-weight: bold;
+        letter-spacing: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+  .sidebar-content {
+    width: 100%;
+    background-color: red;
+  }
 }
 
 //Laptop

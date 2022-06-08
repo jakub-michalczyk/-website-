@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -31,10 +31,13 @@ import { Component, Input, OnInit } from '@angular/core';
   ],
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   @Input() isOpen = false;
+  listHidden = false;
+  contentHidden = true;
 
-  ngOnInit() {
-    console.log(this.isOpen);
+  contentToggle() {
+    this.listHidden = !this.listHidden;
+    this.contentHidden = !this.contentHidden;
   }
 }
