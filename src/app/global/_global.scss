@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;600&display=swap");
-$white: #fff;
-
 @font-face {
   font-family: "Kimberley Heavy";
   src: url("/src/assets/fonts/kimberley\ bl.ttf");
 }
+
+$white: #fff;
+$black: #000;
+$grey: #b2a5a5;
 
 /// Stroke font-character
 /// @param  {Integer} $stroke - Stroke width

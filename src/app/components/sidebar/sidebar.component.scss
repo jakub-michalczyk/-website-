@@ -1,0 +1,15 @@
+@use "/src/app/global/global.scss";
+
+:host {
+  width: 100%;
+  height: 100%;
+  .sidebar-wrap {
+    position: fixed;
+    background-color: global.$black;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    width: 25%;
+    height: 100%;
+  }
+}

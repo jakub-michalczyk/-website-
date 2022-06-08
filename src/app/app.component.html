@@ -11,7 +11,23 @@
     <!-- MAIN HEADING -->
     <h1 class="main-heading">
         <span>hi, i'm jacob a</span>
-        <span class="text-indent">front-end developer</span>
+        <span class="text-indent">"front-end developer"</span>
     </h1>
-    <button class="main-btn">open menu</button>
+    <button class="main-btn"
+            (click)="toggleSidebar()">open menu</button>
 </div>
+
+<!-- MENU BURGER -->
+<label for="check"
+       [ngClass]="sidebarOpen ? 'contrast' : 'regural'"
+       (change)="toggleSidebar()">
+    <input type="checkbox"
+           [checked]="sidebarOpen"
+           id="check" />
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+<!-- SIDEBAR -->
+<app-sidebar [isOpen]="sidebarOpen"></app-sidebar>

@@ -24,12 +24,12 @@
 }
 
 .main-heading {
-  @include global.stroke(1, #b2a5a5);
+  @include global.stroke(1, global.$grey);
   display: flex;
   font-size: 5rem;
   flex-direction: column;
   text-align: left;
-  color: #fff;
+  color: global.$white;
   font-weight: normal;
   font-family: "Kimberley Heavy";
   .text-indent {
@@ -39,15 +39,68 @@
 
 .main-btn {
   display: block;
+  cursor: pointer;
   font-family: "Comfortaa", cursive;
   outline: none;
   border: none;
-  background-color: #000;
-  color: #fff;
+  background-color: global.$black;
+  color: global.$white;
   border-radius: 3px;
   padding: 10px 15px;
   font-size: 0.7rem;
   font-weight: 300;
+}
+
+// Hamburger
+.contrast span {
+  background-color: global.$white;
+}
+.regural span {
+  background-color: global.$black;
+}
+
+label {
+  position: absolute;
+  transition: background-color 0.3s;
+  top: 2%;
+  right: 2%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+  transform: scale(0.6);
+  span {
+    border-radius: 10px;
+    height: 7px;
+    margin: 7px 0;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    &:nth-of-type(1) {
+      width: 50%;
+    }
+    &:nth-of-type(2) {
+      width: 100%;
+    }
+    &:nth-of-type(3) {
+      width: 75%;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+    &:checked ~ span:nth-of-type(1) {
+      transform-origin: bottom;
+      transform: rotatez(45deg) translate(8px, 0px);
+    }
+    &:checked ~ span:nth-of-type(2) {
+      transform-origin: top;
+      transform: rotatez(-45deg);
+    }
+    &:checked ~ span:nth-of-type(3) {
+      transform-origin: bottom;
+      width: 50%;
+      transform: translate(30px, -11px) rotatez(45deg);
+    }
+  }
 }
 
 @media only screen and (max-width: 1000px) {
