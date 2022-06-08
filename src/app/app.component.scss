@@ -33,7 +33,7 @@
   font-weight: normal;
   font-family: "Kimberley Heavy";
   .text-indent {
-    padding-left: 50px;
+    padding-left: 75px;
   }
 }
 
@@ -48,4 +48,32 @@
   padding: 10px 15px;
   font-size: 0.7rem;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-heading {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-heading {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-heading {
+    text-align: center;
+    padding: 0 5%;
+    .text-indent {
+      padding-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    .main-heading {
+      font-size: 2.5rem;
+    }
+  }
 }
