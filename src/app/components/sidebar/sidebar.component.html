@@ -1,2 +1,16 @@
 <div class="sidebar-wrap"
-     [@openClose]="isOpen ? 'closed' : 'open'"></div>
+     [@openClose]="isOpen ? 'closed' : 'open'">
+    <ul class="sidebar-content-list"
+        [ngClass]="listHidden ? 'hide' : 'show'">
+        <li (click)="contentToggle()"
+            class="sidebar-list-element">experience</li>
+        <li (click)="contentToggle()"
+            class="sidebar-list-element">skills</li>
+        <li (click)="contentToggle()"
+            class="sidebar-list-element">projects</li>
+        <li (click)="contentToggle()"
+            class="sidebar-list-element">contact</li>
+    </ul>
+    <div class="sidebar-content hide"
+         [ngClass]="contentHidden ? 'hide' : 'show-full'"></div>
+</div>
