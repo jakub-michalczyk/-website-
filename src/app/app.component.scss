@@ -15,6 +15,7 @@
 .logo-wrap {
   position: absolute;
   width: 3rem;
+  z-index: 3;
   top: 0;
   left: 0;
   padding: 1rem;
@@ -23,10 +24,17 @@
   }
 }
 
+.silhouette {
+  position: fixed;
+  z-index: 2;
+  transform: scale(0.9);
+}
+
 .main-heading {
   @include global.stroke(1, global.$grey);
   display: flex;
   font-size: 5rem;
+  z-index: 3;
   flex-direction: column;
   text-align: left;
   color: global.$white;
@@ -44,6 +52,7 @@
   font-family: "Comfortaa", cursive;
   outline: none;
   border: none;
+  z-index: 3;
   background-color: global.$black;
   color: global.$white;
   border-radius: 3px;

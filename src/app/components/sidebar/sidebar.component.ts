@@ -35,9 +35,14 @@ export class SidebarComponent {
   @Input() isOpen = false;
   listHidden = false;
   contentHidden = true;
+  choosedTab?: string;
 
-  contentToggle() {
+  contentToggle(tab?: string) {
     this.listHidden = !this.listHidden;
     this.contentHidden = !this.contentHidden;
+
+    if (tab) {
+      this.choosedTab = tab;
+    }
   }
 }

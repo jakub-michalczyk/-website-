@@ -1,4 +1,10 @@
 @use "/src/app/global/global.scss";
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
 
 :host {
   width: 100%;
@@ -6,10 +12,7 @@
 }
 
 .sidebar-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, column);
   position: fixed;
   background-color: global.$black;
   top: 0;
@@ -18,7 +21,8 @@
   width: 25%;
   height: 100%;
   .show-full {
-    height: 100%;
+    animation: showFullSize 0.2s;
+    animation-fill-mode: forwards;
   }
   .show {
     height: 30%;
@@ -27,10 +31,10 @@
     height: 0;
   }
   .sidebar-content-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @include flex(space-around, center, column);
+    overflow: hidden;
     color: global.$white;
+    transition: height 0.2s;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -46,8 +50,81 @@
     }
   }
   .sidebar-content {
+    color: global.$white;
+    position: relative;
+    overflow: hidden;
+    height: 0;
     width: 100%;
-    background-color: red;
+  }
+  .back {
+    position: absolute;
+    cursor: pointer;
+    transform: scale(0.6);
+    top: 2%;
+    left: 2%;
+  }
+}
+
+.tab {
+  @include flex(center, center, column);
+  height: 100%;
+}
+
+.experience {
+  .chart {
+    @include flex(center, center);
+    font-family: "Comfortaa", cursive;
+    width: 75%;
+    height: 30%;
+    .line {
+      background-color: global.$white;
+      width: 3px;
+      border-radius: 4px;
+      height: 100%;
+      &::before {
+        position: relative;
+        top: calc(10% + 5px);
+        display: block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        transform: translateX(calc(-3px - 0.75px)) translateY(-1px);
+        border: 1px solid global.$black;
+        border-radius: 50%;
+        background-color: global.$grey;
+      }
+    }
+    .chart-lines {
+      @include flex(space-between, center, column);
+      margin: 0 10% 0 5%;
+      height: 100%;
+      span {
+        width: 10px;
+        height: 1px;
+        margin: 3px 0;
+        background-color: global.$white;
+      }
+    }
+    .chart-companies {
+      @include flex(space-between, center, column);
+      height: 100%;
+      color: global.$white;
+      font-size: 0.7rem;
+      cursor: pointer;
+      .company {
+        font-weight: bold;
+        color: global.$grey;
+      }
+    }
+  }
+}
+
+@keyframes showFullSize {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
   }
 }
 
