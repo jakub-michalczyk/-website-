@@ -1,0 +1,120 @@
+@use "/src/app/global/global.scss";
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.experience {
+  position: relative;
+  .tab-title {
+    font-family: "Comfortaa", cursive;
+    color: global.$white;
+    font-size: 2rem;
+    margin-bottom: 5rem;
+  }
+  .chart {
+    @include global.flex(center, center);
+    font-family: "Comfortaa", cursive;
+    width: 75%;
+    height: 30%;
+    .line {
+      background-color: global.$white;
+      width: 3px;
+      border-radius: 4px;
+      height: 100%;
+      &::before {
+        position: relative;
+        top: 0;
+        transition: top 0.2s;
+        display: block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        transform: translateX(calc(-3px - 0.75px)) translateY(-1px);
+        border: 1px solid global.$black;
+        border-radius: 50%;
+        background-color: global.$grey;
+      }
+    }
+    .first-company::before {
+      top: 0;
+    }
+    .second-company::before {
+      top: calc(10%);
+    }
+    .third-company::before {
+      top: calc(20%);
+    }
+    .fifth-company::before {
+      top: calc(30%);
+    }
+    .sixth-company::before {
+      top: calc(40%);
+    }
+    .seventh-company::before {
+      top: calc(50%);
+    }
+    .eighth-company::before {
+      top: calc(60%);
+    }
+    .ninth-company::before {
+      top: calc(70%);
+    }
+    .tenth-company::before {
+      top: calc(80%);
+    }
+    .chart-lines {
+      @include global.flex(space-between, center, column);
+      margin: 0 10% 0 5%;
+      height: 100%;
+      span {
+        width: 10px;
+        height: 1px;
+        margin: 3px 0;
+        background-color: global.$white;
+      }
+    }
+    .chart-companies {
+      @include global.flex(space-between, center, column);
+      height: 100%;
+      color: global.$white;
+      font-size: 0.7rem;
+      cursor: pointer;
+      .chart-company {
+        width: 100%;
+      }
+      .company {
+        font-weight: bold;
+        color: global.$grey;
+      }
+      .current {
+        position: relative;
+        padding-bottom: 5px;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 1px;
+          background-color: global.$white;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+  .company-technologies {
+    font-family: "Comfortaa", cursive;
+    border-top: 1px solid global.$white;
+    width: 52%;
+    margin-top: 15%;
+    list-style: none;
+    padding: 3% 0 0 0;
+    .company-technology {
+      @include global.flex(space-between, center);
+      margin: 2% 0;
+      .technology-name {
+        margin-left: 20px;
+      }
+    }
+  }
+}

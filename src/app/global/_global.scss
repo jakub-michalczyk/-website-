@@ -4,6 +4,13 @@
   src: url("/src/assets/fonts/kimberley\ bl.ttf");
 }
 
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
 $white: #fff;
 $black: #000;
 $grey: #b2a5a5;
@@ -29,4 +36,19 @@ $light_grey: #e1dcdc;
 /// @return {Style}           - text-shadow
 @mixin stroke($stroke, $color) {
   text-shadow: stroke($stroke, $color);
+}
+
+.tab {
+  @include flex(flex-start, center, column);
+  padding-top: 25%;
+  height: 100%;
+}
+
+@keyframes showFullSize {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
