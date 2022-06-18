@@ -11,8 +11,28 @@
   flex-direction: $direction;
 }
 
+@mixin customScroll {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $white;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: $white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $grey;
+  }
+}
+
 $white: #fff;
 $black: #000;
+$light_black: #1c1c1c;
 $grey: #b2a5a5;
 $light_grey: #e1dcdc;
 
@@ -42,6 +62,10 @@ $light_grey: #e1dcdc;
   @include flex(flex-start, center, column);
   padding-top: 25%;
   height: 100%;
+}
+
+.font {
+  font-family: "Comfortaa", cursive;
 }
 
 @keyframes showFullSize {
