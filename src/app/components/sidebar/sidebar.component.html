@@ -1,11 +1,11 @@
 <div class="sidebar-wrap"
      [@openClose]="isOpen ? 'closed' : 'open'">
+
+    <!-- MENU -->
     <ul class="sidebar-content-list"
         [ngClass]="listHidden ? 'hide' : 'show'">
         <li (click)="contentToggle('experience')"
             class="sidebar-list-element">experience</li>
-        <li (click)="contentToggle('skills')"
-            class="sidebar-list-element">skills</li>
         <li (click)="contentToggle('projects')"
             class="sidebar-list-element">projects</li>
         <li (click)="contentToggle('contact')"
@@ -13,43 +13,19 @@
     </ul>
     <div class="sidebar-content"
          [ngClass]="contentHidden ? 'hide' : 'show-full'">
+
+        <!-- BACK BUTTON -->
         <div class="back"
              (click)="contentToggle()">
             <img src="../../../assets/icons/back.png" />
         </div>
         <ng-container [ngSwitch]="choosedTab">
-            <div class="tab experience"
-                 *ngSwitchCase="'experience'">
-                <div class="chart">
-                    <div class="line"></div>
-                    <div class="chart-lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="chart-companies">
-                        <div class="chart-company"><span class="company">Selea</span>, Ruda Śląska</div>
-                        <div class="chart-company"><span class="company">Tom&Co</span>, Katowice</div>
-                        <div class="chart-company">&nbsp;</div>
-                        <div class="chart-company">&nbsp;</div>
-                        <div class="chart-company">&nbsp;</div>
-                        <div class="chart-company">&nbsp;</div>
-                        <div class="chart-company">&nbsp;</div>
-                        <div class="chart-company">&nbsp;</div>
-                        <div class="chart-company">&nbsp;</div>
-                        <div class="chart-company">&nbsp;</div>
-                    </div>
-                </div>
-            </div>
-            <ul class="company-technologies">
-                <li></li>
-            </ul>
+
+            <!-- EXPERIENCE TAB -->
+            <app-experience-tab *ngSwitchCase="'experience'"></app-experience-tab>
+
+            <!-- PROJECTS TAB -->
+            <app-projects-tab *ngSwitchCase="'projects'"></app-projects-tab>
         </ng-container>
     </div>
 </div>
