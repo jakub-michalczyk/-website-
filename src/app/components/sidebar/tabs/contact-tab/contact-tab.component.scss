@@ -1,0 +1,91 @@
+@use "/src/app/global/global.scss";
+
+:host ::ng-deep {
+  width: 100%;
+  height: 100%;
+  .contact {
+    position: relative;
+    width: 100%;
+    .tab-title {
+      @extend .font;
+      color: global.$white;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .profile-pic {
+      margin-bottom: 2rem;
+      width: 35%;
+      .picture {
+        border: 4px solid global.$white;
+        border-radius: 50%;
+        max-width: 100%;
+      }
+    }
+    .form-group {
+      $width: 90%;
+      @include global.customScroll;
+      @extend .font;
+      overflow: auto;
+      max-height: 45%;
+      color: global.$white;
+      width: $width;
+      padding-left: 10%;
+      .send-btn {
+        @extend .font;
+        display: block;
+        padding: 0 10px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        z-index: 3;
+        background-color: global.$white;
+        color: global.$black;
+        border-radius: 3px;
+        font-weight: bold;
+        font-size: 0.7rem;
+        font-weight: 300;
+        transition: opacity 0.2s;
+        &:disabled {
+          cursor: default;
+          opacity: 0.4;
+        }
+      }
+      .error-message {
+        display: block;
+        font-size: 0.8rem;
+        width: $width;
+        color: global.$grey;
+        margin-bottom: 1rem;
+      }
+      .mat-form-field {
+        @extend .font;
+        width: $width;
+      }
+      .mat-form-field-flex,
+      .mat-form-field-ripple {
+        background-color: global.$light_black;
+        border-radius: 0;
+      }
+      .mat-form-field-label {
+        color: global.$white;
+      }
+      .mat-form-field-underline {
+        background-color: global.$white;
+      }
+      .button-wrap {
+        width: $width;
+        .submit-message {
+          color: global.$grey;
+        }
+      }
+      .text-area-wrap {
+        .mat-form-field-flex {
+          height: 20vh;
+          textarea {
+            resize: none;
+          }
+        }
+      }
+    }
+  }
+}

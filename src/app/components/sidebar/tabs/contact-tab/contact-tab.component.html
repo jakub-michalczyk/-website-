@@ -1,0 +1,54 @@
+<div class="tab contact">
+    <h2 class="tab-title">contact</h2>
+    <div class="profile-pic">
+        <img class="picture"
+             src="../../../../../assets/images/pic.jpg" />
+    </div>
+    <form [formGroup]="contactForm"
+          class="form-group">
+        <mat-form-field class="field-wrap"
+                        appearance="fill">
+            <mat-label class="field-label">name</mat-label>
+            <input class="text-field"
+                   formControlName="name"
+                   matInput>
+        </mat-form-field>
+
+        <small class="error-message"
+               *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">name is required</small>
+
+        <mat-form-field class="field-wrap"
+                        appearance="fill">
+            <mat-label class="field-label">e-mail</mat-label>
+            <input class="text-field"
+                   formControlName="email"
+                   matInput>
+        </mat-form-field>
+
+        <small class="error-message"
+               *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">e-mail is required</small>
+
+        <mat-form-field class="field-wrap text-area-wrap"
+                        appearance="fill">
+            <mat-label class="field-label">message</mat-label>
+            <textarea class="text-area-field"
+                      formControlName="message"
+                      matInput></textarea>
+        </mat-form-field>
+
+        <small class="error-message"
+               *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            message is required
+        </small>
+
+        <div class="button-wrap">
+            <button mat-raised-button
+                    [disabled]="contactForm.invalid"
+                    *ngIf="!submitMessage"
+                    (click)="submitData(contactForm.value)"
+                    class="send-btn">send message</button>
+            <p class="submit-message"
+               *ngIf="submitMessage">{{submitMessage}}</p>
+        </div>
+    </form>
+</div>

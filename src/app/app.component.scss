@@ -30,7 +30,7 @@
 .main-heading {
   @include global.stroke(1, global.$grey);
   @include global.flex(flex-start, flex-start, column);
-  font-size: 5rem;
+  font-size: 4rem;
   z-index: 3;
   text-align: left;
   color: global.$white;
@@ -117,10 +117,19 @@ label {
 @media only screen and (max-width: 768px) {
   .main-heading {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3.5rem;
+    span {
+      width: 100%;
+    }
     .text-indent {
       padding-left: 0;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-heading {
+    font-size: 3rem;
   }
 }
 
