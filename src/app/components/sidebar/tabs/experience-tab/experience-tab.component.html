@@ -1,0 +1,33 @@
+<div class="tab experience">
+    <h2 class="tab-title">{{content.title}}</h2>
+    <div class="chart">
+        <div class="line"
+             [ngClass]="markerPosition"></div>
+        <div class="chart-lines">
+            <span *ngFor="let line of [].constructor(content.chartLinesLength)"></span>
+        </div>
+        <div class="chart-companies">
+            <div class="chart-company"
+                 (click)="showCompanyData(company)"
+                 *ngFor="let company of content.companies">
+                <ng-container [ngSwitch]="company.exist">
+                    <ng-container *ngSwitchCase="true">
+                        <span class="company">{{company.name}}</span>, {{company.city}}
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="false">
+                        <span class="company">&nbsp;</span>
+                    </ng-container>
+                </ng-container>
+
+            </div>
+        </div>
+    </div>
+    <ul class="company-technologies">
+        <li class="company-technology"
+            *ngFor="let skill of companyData.skills">
+            <img [src]="'../../../../../assets/icons/' + skill.img + '.png'">
+            <span class="technology-name">{{skill.name}}</span>
+        </li>
+    </ul>
+</div>
