@@ -33,11 +33,22 @@
     font-size: 2rem;
     margin-bottom: 5rem;
   }
+  .project-overlayer {
+    @extend .font;
+    position: absolute;
+    width: 100%;
+    background-color: global.$grey;
+    opacity: 0;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
   .projects-wrap {
     @include customScroll;
     width: 100%;
     overflow-y: scroll;
-    padding-bottom: 50%;
+    max-height: 60%;
     img {
       display: block;
       max-width: 100%;
@@ -46,12 +57,20 @@
       @include global.flex(space-between, center);
       margin: 5px 0;
       .row-wrap {
+        position: relative;
         width: calc(50% - 2.5px);
+        &:hover .project-overlayer {
+          opacity: 0.5;
+        }
       }
     }
     .one-row {
       .row-wrap {
+        position: relative;
         width: 100%;
+        &:hover .project-overlayer {
+          opacity: 0.5;
+        }
       }
     }
   }
