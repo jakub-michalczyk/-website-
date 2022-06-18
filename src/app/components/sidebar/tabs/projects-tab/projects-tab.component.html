@@ -3,25 +3,33 @@
     <div class="projects-wrap">
         <div class="one-row">
             <div class="row-wrap">
-                <div class="project-overlayer">see project</div>
-                <img src="../../../../../assets/images/placeholder.jpg">
+                <a href="https://video-finder.netlify.app/">
+                    <ng-container *ngTemplateOutlet="overlayer"></ng-container>
+                    <img src="../../../../../assets/images/video-finder.jpg">
+                </a>
             </div>
         </div>
         <div class="two-rows">
             <div class="row-wrap">
-                <div class="project-overlayer">test</div>
+                <ng-container *ngTemplateOutlet="overlayer"></ng-container>
                 <img src="../../../../../assets/images/placeholder.jpg">
             </div>
             <div class="row-wrap">
-                <div class="project-overlayer">test</div>
+                <ng-container *ngTemplateOutlet="overlayer"></ng-container>
                 <img src="../../../../../assets/images/placeholder.jpg">
             </div>
         </div>
         <div class="one-row">
             <div class="row-wrap">
-                <div class="project-overlayer">test</div>
+                <ng-container *ngTemplateOutlet="overlayer"></ng-container>
                 <img src="../../../../../assets/images/placeholder.jpg">
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #overlayer>
+    <div class="project-overlayer">
+        <span class="overlayer-label">see project</span>
+    </div>
+</ng-template>

@@ -14,14 +14,23 @@
   }
   .project-overlayer {
     @extend .font;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 100%;
-    background-color: global.$grey;
-    opacity: 0;
+    background-color: rgba(global.$grey, 0);
     height: 100%;
     z-index: 2;
     cursor: pointer;
-    transition: opacity 0.3s;
+    transition: background-color 0.3s;
+    .overlayer-label {
+      opacity: 0;
+      color: global.$white;
+      border: 1px solid global.$white;
+      border-radius: 4px;
+      padding: 5px 10px;
+    }
   }
   .projects-wrap {
     @include global.customScroll;
@@ -39,7 +48,10 @@
         position: relative;
         width: calc(50% - 2.5px);
         &:hover .project-overlayer {
-          opacity: 0.5;
+          background-color: rgba(global.$grey, 0.5);
+          .overlayer-label {
+            opacity: 1;
+          }
         }
       }
     }
@@ -48,7 +60,10 @@
         position: relative;
         width: 100%;
         &:hover .project-overlayer {
-          opacity: 0.5;
+          background-color: rgba(global.$grey, 0.5);
+          .overlayer-label {
+            opacity: 1;
+          }
         }
       }
     }
