@@ -6,8 +6,6 @@
         [ngClass]="listHidden ? 'hide' : 'show'">
         <li (click)="contentToggle('experience')"
             class="sidebar-list-element">experience</li>
-        <li (click)="contentToggle('skills')"
-            class="sidebar-list-element">skills</li>
         <li (click)="contentToggle('projects')"
             class="sidebar-list-element">projects</li>
         <li (click)="contentToggle('contact')"
@@ -25,6 +23,9 @@
 
             <!-- EXPERIENCE TAB -->
             <app-experience-tab *ngSwitchCase="'experience'"></app-experience-tab>
+
+            <!-- PROJECTS TAB -->
+            <app-projects-tab *ngSwitchCase="'projects'"></app-projects-tab>
         </ng-container>
     </div>
 </div>
