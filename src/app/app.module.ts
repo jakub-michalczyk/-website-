@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactTabComponent } from './components/sidebar/tabs/contact-tab/contact-tab.component';
 import { ExperienceTabComponent } from './components/sidebar/tabs/experience-tab/experience-tab.component';
 import { ProjectsTabComponent } from './components/sidebar/tabs/projects-tab/projects-tab.component';
+import { SocialsComponent } from './components/socials/socials.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyARDuhLXyTmpF3FkQL47pP1GuFAXbHbbWU',
@@ -31,6 +32,7 @@ const firebaseConfig = {
     ExperienceTabComponent,
     ProjectsTabComponent,
     ContactTabComponent,
+    SocialsComponent,
   ],
   imports: [
     BrowserModule,
