@@ -23,7 +23,8 @@
             </div>
         </div>
     </div>
-    <ul class="company-technologies">
+    <ul class="company-technologies"
+        [ngClass]="hideTechnologiesList ? 'show' : 'hide'">
         <li class="company-technology"
             *ngFor="let skill of companyData.skills">
             <img [src]="'../../../../../assets/icons/' + skill.img + '.png'">
