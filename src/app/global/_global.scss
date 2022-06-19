@@ -61,7 +61,7 @@ $light_grey: #e1dcdc;
 .tab {
   @include flex(flex-start, center, column);
   padding-top: 25%;
-  height: 100%;
+  height: 75%;
 }
 
 .font {

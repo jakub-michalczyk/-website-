@@ -42,6 +42,7 @@ enum EMarkerPosition {
 })
 export class ExperienceTabComponent implements OnInit {
   positions = EMarkerPosition;
+  hideTechnologiesList = false;
   content: NContent.ContentData = {
     title: 'experience',
     chartLinesLength: 10,
@@ -100,8 +101,13 @@ export class ExperienceTabComponent implements OnInit {
 
   showCompanyData(data: NContent.CompanyData) {
     if (data.name && data.city) {
+      this.hideTechnologiesList = true;
+
       //Company Exists
       this.companyData = this.content.companies[data.id];
+      setTimeout(() => {
+        this.hideTechnologiesList = false;
+      }, 200);
     }
   }
 }

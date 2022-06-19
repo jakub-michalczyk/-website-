@@ -5,7 +5,10 @@
 }
 
 .experience {
+  @include global.customScroll;
   position: relative;
+  max-height: 90%;
+  overflow: auto;
   .tab-title {
     font-family: "Comfortaa", cursive;
     color: global.$white;
@@ -30,7 +33,7 @@
         content: "";
         width: 10px;
         height: 10px;
-        transform: translateX(calc(-3px - 0.75px)) translateY(-1px);
+        transform: translateX(-4px) translateY(-1px);
         border: 1px solid global.$black;
         border-radius: 50%;
         background-color: global.$grey;
@@ -79,11 +82,11 @@
       height: 100%;
       color: global.$white;
       font-size: 0.7rem;
-      cursor: pointer;
       .chart-company {
         width: 100%;
       }
       .company {
+        cursor: pointer;
         font-weight: bold;
         color: global.$grey;
       }
@@ -102,8 +105,17 @@
       }
     }
   }
+  .hide {
+    animation-name: hide 0.2s;
+    animation-fill-mode: forwards;
+  }
+  .hide {
+    animation-name: show 0.2s;
+    animation-fill-mode: forwards;
+  }
   .company-technologies {
     font-family: "Comfortaa", cursive;
+    font-size: 0.8rem;
     border-top: 1px solid global.$white;
     width: 52%;
     margin-top: 15%;
@@ -116,5 +128,23 @@
         margin-left: 20px;
       }
     }
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
