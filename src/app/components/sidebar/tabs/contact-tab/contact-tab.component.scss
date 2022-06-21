@@ -1,13 +1,12 @@
 @use "/src/app/global/global.scss";
 
 :host ::ng-deep {
-  width: 100%;
-  height: 100%;
+  @include global.fullWidth;
   .contact {
     position: relative;
     width: 100%;
     .tab-title {
-      @extend .font;
+      @extend .font-comfortaa;
       color: global.$white;
       font-size: 2rem;
       margin-bottom: 1rem;
@@ -24,14 +23,14 @@
     .form-group {
       $width: 90%;
       @include global.customScroll;
-      @extend .font;
+      @extend .font-comfortaa;
       overflow: auto;
       max-height: 100%;
       color: global.$white;
       width: $width;
       padding-left: 10%;
       .send-btn {
-        @extend .font;
+        @extend .font-comfortaa;
         display: block;
         padding: 0 10px;
         cursor: pointer;
@@ -58,7 +57,7 @@
         margin-bottom: 1rem;
       }
       .mat-form-field {
-        @extend .font;
+        @extend .font-comfortaa;
         width: $width;
       }
       .mat-form-field-flex,
