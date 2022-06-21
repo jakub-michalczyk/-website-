@@ -12,8 +12,17 @@
       margin-bottom: 1rem;
     }
     .profile-pic {
+      position: relative;
       margin-bottom: 2rem;
       width: 35%;
+      .placeholder-pic {
+        position: absolute;
+        background-color: global.$grey;
+        border-radius: 50%;
+        width: 100%;
+        height: 93%;
+        border: 4px solid global.$white;
+      }
       .picture {
         border: 4px solid global.$white;
         border-radius: 50%;
