@@ -4,7 +4,7 @@
   position: absolute;
   z-index: 10;
   bottom: 0;
-  right: 0;
+  left: 0;
   padding: 1rem;
   margin: 0;
   list-style: none;
@@ -15,6 +15,8 @@
     transition: transform 0.2s;
   }
   .social-icon-link {
+    display: block;
+    margin: 15% 0;
     &:hover {
       img {
         transform: scale(1.1);
