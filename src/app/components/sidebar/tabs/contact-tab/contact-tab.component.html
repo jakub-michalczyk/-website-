@@ -1,6 +1,8 @@
 <div class="tab contact">
        <h2 class="tab-title">contact</h2>
        <div class="profile-pic">
+              <div class="placeholder-pic"
+                   *ngIf="showPlaceholder"></div>
               <img class="picture"
                    hidden
                    (load)="loaded($event)"
