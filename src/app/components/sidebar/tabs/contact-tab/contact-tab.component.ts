@@ -35,4 +35,9 @@ export class ContactTabComponent implements OnInit {
         console.log('err' + err);
       });
   }
+
+  loaded(evt: Event) {
+    let img = evt.target as HTMLImageElement;
+    img.removeAttribute('hidden');
+  }
 }
