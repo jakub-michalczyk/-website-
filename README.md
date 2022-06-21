@@ -1,6 +1,6 @@
-# DevcobbFinal
-Website can be seen here: https://jakubmichalczyk.netlify.app/
+# Website
 
+Website can be seen here: https://jakubmichalczyk.netlify.app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
