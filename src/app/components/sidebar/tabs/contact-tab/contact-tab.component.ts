@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactTabComponent implements OnInit {
   contactForm = {} as FormGroup;
   isSubmit = false;
+  showPlaceholder = true;
   submitMessage = '';
 
   constructor(
@@ -34,5 +35,11 @@ export class ContactTabComponent implements OnInit {
       .catch((err) => {
         console.log('err' + err);
       });
+  }
+
+  loaded(evt: Event) {
+    let img = evt.target as HTMLImageElement;
+    this.showPlaceholder = false;
+    img.removeAttribute('hidden');
   }
 }

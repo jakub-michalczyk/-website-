@@ -1,8 +1,7 @@
 @use "/src/app/global/global.scss";
 
 :host {
-  width: 100%;
-  height: 100%;
+  @include global.fullWidth;
 }
 
 .sidebar-wrap {
@@ -26,13 +25,13 @@
   }
   .sidebar-content-list {
     @include global.flex(space-around, center, column);
+    @extend .font-comfortaa;
     overflow: hidden;
     color: global.$white;
     transition: height 0.2s;
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: "Comfortaa", cursive;
     text-align: center;
     .sidebar-list-element {
       transition: letter-spacing 0.1s;
