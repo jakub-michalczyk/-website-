@@ -27,7 +27,7 @@
         [ngClass]="hideTechnologiesList ? 'hide' : 'show'">
         <li class="company-technology"
             *ngFor="let skill of companyData.skills">
-            <img [src]="'../../../../../assets/icons/' + skill.img + '.png'">
+            <img [src]="'/assets/icons/' + skill.img + '.png'">
             <span class="technology-name">{{skill.name}}</span>
         </li>
     </ul>
