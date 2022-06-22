@@ -106,11 +106,11 @@
     }
   }
   .hide {
-    animation-name: hide 0.2s;
+    animation: hide 0.3s;
     animation-fill-mode: forwards;
   }
-  .hide {
-    animation-name: show 0.2s;
+  .show {
+    animation: show 0.3s;
     animation-fill-mode: forwards;
   }
   .company-technologies {
@@ -121,6 +121,7 @@
     margin-top: 15%;
     list-style: none;
     padding: 3% 0 0 0;
+    transition: opacity 0.3s;
     .company-technology {
       @include global.flex(space-between, center);
       margin: 2% 0;
