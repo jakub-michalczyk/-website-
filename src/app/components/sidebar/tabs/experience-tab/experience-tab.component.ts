@@ -103,11 +103,12 @@ export class ExperienceTabComponent implements OnInit {
     if (data.name && data.city) {
       this.hideTechnologiesList = true;
 
-      //Company Exists
-      this.companyData = this.content.companies[data.id];
       setTimeout(() => {
         this.hideTechnologiesList = false;
-      }, 200);
+
+        //Company Exists
+        this.companyData = this.content.companies[data.id];
+      }, 350);
     }
   }
 }
