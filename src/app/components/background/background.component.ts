@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Heading } from 'src/app/app.component';
 
 @Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
-  styleUrls: ['./background.component.scss']
+  styleUrls: ['./background.component.scss'],
 })
-export class BackgroundComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class BackgroundComponent {
+  @Input() heading = {} as Heading;
+  constructor() {}
 }

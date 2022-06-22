@@ -1,5 +1,5 @@
 <!-- BACKGROUND -->
-<app-background></app-background>
+<app-background [heading]="heading"></app-background>
 
 <div class="content-wrap">
     <!-- LOGO -->
@@ -15,8 +15,8 @@
 
     <!-- MAIN HEADING -->
     <h1 class="main-heading">
-        <span>hi, i'm jacob a</span>
-        <span class="text-indent">"front-end developer"</span>
+        <span>{{heading.firstLine}}</span>
+        <span class="text-indent">"{{heading.secondLine}}"</span>
     </h1>
     <button class="main-btn"
             (click)="toggleSidebar()">open menu</button>
