@@ -18,6 +18,9 @@
     font-size: 2rem;
     margin-bottom: 5rem;
   }
+  .placeholder-loading {
+    width: 100%;
+  }
   .project-overlayer {
     @extend .font-comfortaa;
     @include global.fullWidth;

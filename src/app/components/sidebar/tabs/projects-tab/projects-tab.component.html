@@ -1,6 +1,11 @@
 <div class="tab projects">
     <h2 class="tab-title">projects</h2>
-    <div class="projects-wrap">
+    <div class="placeholder-loading">
+        <app-loading-screen [contrast]="true"
+                            *ngIf="!loaded"></app-loading-screen>
+    </div>
+    <div class="projects-wrap"
+         *ngIf="loaded">
         <div class="one-row">
             <div class="row-wrap">
                 <a href="https://video-finder.netlify.app/">
