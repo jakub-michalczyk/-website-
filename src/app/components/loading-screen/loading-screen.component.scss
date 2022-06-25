@@ -8,6 +8,19 @@
   z-index: 999999;
 }
 
+.contrast {
+  background-color: global.$black;
+  height: 50%;
+}
+
+.black-stroke {
+  stroke: #000;
+}
+
+.white-stroke {
+  stroke: #fff;
+}
+
 .container {
   width: 75px;
   height: 75px;

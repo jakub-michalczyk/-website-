@@ -108,7 +108,7 @@ export class ExperienceTabComponent implements OnInit {
 
         //Company Exists
         this.companyData = this.content.companies[data.id];
-      }, 350);
+      }, 750);
     }
   }
 }
