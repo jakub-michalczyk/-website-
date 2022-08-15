@@ -29,16 +29,17 @@
 
 .main-heading {
   @include global.stroke(1, global.$grey);
-  @include global.flex(flex-start, flex-start, column);
+  @include global.flex(flex-start, center, column);
   @extend .font-kimberley;
   font-size: 4rem;
   z-index: 3;
-  text-align: left;
+  text-align: center;
   color: global.$white;
   font-weight: normal;
   .text-indent {
     color: global.$light_grey;
     padding-left: 75px;
+    font-size: 3rem;
   }
 }
 
@@ -110,18 +111,22 @@ label {
 
 @media only screen and (max-width: 1000px) {
   .main-heading {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    .text-indent {
+      font-size: 2.5rem;
+    }
   }
 }
 
 @media only screen and (max-width: 850px) {
   .main-heading {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     span {
       width: 100%;
     }
     .text-indent {
+      font-size: 2rem;
       padding-left: 0;
     }
   }
@@ -129,12 +134,9 @@ label {
 
 @media only screen and (max-width: 650px) {
   .main-heading {
-    font-size: 3rem;
-  }
-}
-
-@media only screen and (max-width: 414px) {
-  .main-heading {
-    font-size: 3.25rem;
+    font-size: 2.5rem;
+    .text-indent {
+      font-size: 1.5rem;
+    }
   }
 }
