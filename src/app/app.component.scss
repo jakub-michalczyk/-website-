@@ -28,7 +28,7 @@
 }
 
 .main-heading {
-  @include global.stroke(1, global.$grey);
+  @include global.stroke(1, global.$black);
   @include global.flex(flex-start, center, column);
   @extend .font-kimberley;
   font-size: 4rem;
