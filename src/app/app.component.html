@@ -2,7 +2,7 @@
 <app-loading-screen *ngIf="!loaded"></app-loading-screen>
 
 <!-- BACKGROUND -->
-<app-background [heading]="heading"></app-background>
+<app-background></app-background>
 
 <div class="content-wrap">
     <!-- LOGO -->
@@ -16,11 +16,7 @@
         <img src="../assets/images/man.png">
     </div>
 
-    <!-- MAIN HEADING -->
-    <h1 class="main-heading">
-        <span>{{heading.firstLine}}</span>
-        <span class="text-indent">"{{heading.secondLine}}"</span>
-    </h1>
+    <!-- MAIN BUTTON -->
     <button class="main-btn"
             (click)="toggleSidebar()">open menu</button>
 </div>

@@ -1,8 +1,4 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-export interface Heading {
-  firstLine: string;
-  secondLine: string;
-}
 
 @Component({
   selector: 'app-root',
@@ -12,10 +8,6 @@ export interface Heading {
 export class AppComponent {
   sidebarOpen = false;
   loaded = false;
-  heading: Heading = {
-    firstLine: "hi, i'm jacob",
-    secondLine: 'a front-end developer',
-  };
 
   constructor(private cdr: ChangeDetectorRef) {}
 

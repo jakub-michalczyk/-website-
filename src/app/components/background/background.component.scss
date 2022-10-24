@@ -10,40 +10,7 @@
   overflow: hidden;
   top: 0;
   left: 0;
-  .background-text {
-    @include global.stroke(2, global.$grey);
-    @include global.fullWidth;
-    @extend .font-kimberley;
-    text-align: center;
-    color: global.$white;
-    font-size: 20rem;
-    opacity: 0.2;
-    margin-top: -1rem;
-    text-align: center;
-    transform: rotate(20deg);
-    span {
-      display: block;
-    }
-  }
-}
-
-//Laptop
-@media only screen and (max-width: 1440px) {
-  .background-wrap .background-text {
-    font-size: 18rem;
-  }
-}
-
-//Tablet
-@media only screen and (max-width: 768px) {
-  .background-wrap .background-text {
-    font-size: 16.5rem;
-  }
-}
-
-//Mobile
-@media only screen and (max-width: 600px) {
-  .background-wrap .background-text {
-    font-size: 15rem;
+  .img {
+    max-height: 100%;
   }
 }
