@@ -6,31 +6,13 @@
     </div>
     <div class="projects-wrap"
          *ngIf="loaded">
-        <div class="one-row">
-            <div class="row-wrap">
-                <a href="https://video-finder.netlify.app/">
-                    <ng-container *ngTemplateOutlet="overlayer"></ng-container>
-                    <img src="/assets/images/video-finder.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="two-rows">
-            <div class="row-wrap">
-                <a href="https://jakubmichalczyk.netlify.app/">
-                    <ng-container *ngTemplateOutlet="overlayer"></ng-container>
-                    <img src="../../../../../assets/images/website.jpg">
-                </a>
-            </div>
-            <div class="row-wrap">
+        <div class="row-wrap"
+             [ngClass]="{'overlayer': project.name}"
+             *ngFor="let project of projects">
+            <a [attr.href]="project.link">
                 <ng-container *ngTemplateOutlet="overlayer"></ng-container>
-                <img src="/assets/images/placeholder.jpg">
-            </div>
-        </div>
-        <div class="one-row">
-            <div class="row-wrap">
-                <ng-container *ngTemplateOutlet="overlayer"></ng-container>
-                <img src="/assets/images/placeholder.jpg">
-            </div>
+                <img [src]="getImage(project.name)">
+            </a>
         </div>
     </div>
 </div>

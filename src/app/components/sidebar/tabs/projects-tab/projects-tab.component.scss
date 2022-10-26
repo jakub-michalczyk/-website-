@@ -24,47 +24,47 @@
   .project-overlayer {
     @extend .font-comfortaa;
     @include global.fullWidth;
-    @include global.flex(center, center);
+    @include global.flex(center, center, column);
     position: absolute;
     background-color: rgba(global.$grey, 0);
     z-index: 2;
-    cursor: pointer;
     transition: background-color 0.3s;
     .overlayer-label {
       opacity: 0;
       color: global.$white;
-      border: 1px solid global.$white;
+      background-color: global.$black;
       border-radius: 4px;
-      padding: 5px 10px;
+      padding: 10px 15px;
+      font-size: 0.7rem;
+      font-weight: 300;
+      cursor: pointer;
     }
   }
   .projects-wrap {
     @include global.customScroll;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     overflow-y: scroll;
     max-height: 100%;
+    a {
+      cursor: auto;
+    }
     img {
       display: block;
       max-width: 100%;
     }
-    .two-rows {
-      @include global.flex(space-between, center);
-      margin: 5px 0;
-      .row-wrap {
-        position: relative;
-        width: calc(50% - 2.5px);
-        &:hover .project-overlayer {
-          @include backgroundOverlayer;
-        }
+    .row-wrap {
+      position: relative;
+      width: 50%;
+      &:nth-child(3n + 1) {
+        width: 100%;
       }
     }
-    .one-row {
-      .row-wrap {
-        position: relative;
-        width: 100%;
-        &:hover .project-overlayer {
-          @include backgroundOverlayer;
-        }
+    .overlayer {
+      cursor: pointer;
+      &:hover .project-overlayer {
+        @include backgroundOverlayer;
       }
     }
   }
