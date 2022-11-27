@@ -8,6 +8,7 @@ import {
 interface Projects {
   name: string;
   link?: string;
+  available: boolean;
 }
 
 @Component({
@@ -21,10 +22,23 @@ export class ProjectsTabComponent implements OnInit, AfterViewInit {
     {
       name: 'guess-this-artist',
       link: 'https://guess-this-artist.netlify.app/start',
+      available: true,
     },
-    { name: 'website', link: 'https://jakubmichalczyk.netlify.app/' },
-    { name: 'video-finder', link: 'https://video-finder.netlify.app/' },
-    { name: '', link: '' },
+    {
+      name: 'website',
+      link: 'https://jakubmichalczyk.netlify.app/',
+      available: true,
+    },
+    {
+      name: 'video-finder',
+      link: 'https://video-finder.netlify.app/',
+      available: true,
+    },
+    {
+      name: 'revice',
+      link: 'https://github.com/jakub-michalczyk/revice',
+      available: false,
+    },
   ];
 
   constructor(private cdr: ChangeDetectorRef) {}
