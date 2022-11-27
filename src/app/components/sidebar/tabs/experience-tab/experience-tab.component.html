@@ -1,6 +1,19 @@
 <div class="tab experience">
     <h2 class="tab-title">{{content.title}}</h2>
     <div class="chart">
+        <ul class="years-list">
+            <li>2020 - 2021</li>
+            <li>2021 - 2022</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+        </ul>
         <div class="line"
              [ngClass]="markerPosition"></div>
         <div class="chart-lines">
@@ -25,6 +38,7 @@
     </div>
     <ul class="company-technologies"
         [ngClass]="hideTechnologiesList ? 'hide' : 'show'">
+        <h3 class="tab-title title-small">tech stack</h3>
         <li class="company-technology"
             *ngFor="let skill of companyData.skills">
             <img [src]="'/assets/icons/' + skill.img + '.png'">

@@ -100,6 +100,10 @@ export class ExperienceTabComponent implements OnInit {
   }
 
   showCompanyData(data: NContent.CompanyData) {
+    if (this.checkCurrentChoosedCompany(data)) {
+      return;
+    }
+
     if (data.name && data.city) {
       this.hideTechnologiesList = true;
 
@@ -110,5 +114,13 @@ export class ExperienceTabComponent implements OnInit {
         this.companyData = this.content.companies[data.id];
       }, 750);
     }
+  }
+
+  checkCurrentChoosedCompany(data: NContent.CompanyData) {
+    if (data.id === this.companyData.id) {
+      return true;
+    }
+
+    return false;
   }
 }

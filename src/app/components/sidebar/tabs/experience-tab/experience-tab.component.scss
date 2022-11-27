@@ -14,11 +14,26 @@
     font-size: 2rem;
     margin-bottom: 5rem;
   }
+  .title-small {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 5rem 0 2.5rem 0;
+  }
   .chart {
     @include global.flex(center, center);
     @extend .font-comfortaa;
     width: 75%;
     height: 30%;
+    .years-list {
+      @include global.flex(space-between, flex-start, column);
+      list-style: none;
+      margin: 0;
+      padding: 0 10% 0 0;
+      height: 100%;
+      li {
+        font-size: 0.7rem;
+      }
+    }
     .line {
       background-color: global.$white;
       width: 3px;
@@ -105,27 +120,26 @@
     }
   }
   .hide {
-    animation: hide 1s;
+    animation: hide 2s;
     animation-fill-mode: forwards;
   }
   .show {
-    animation: show 1s;
+    animation: show 2s;
     animation-fill-mode: forwards;
   }
   .company-technologies {
     @extend .font-comfortaa;
     font-size: 0.8rem;
-    border-top: 1px solid global.$white;
-    width: 52%;
-    margin-top: 15%;
+    width: 60%;
+    margin-top: 2.5%;
     list-style: none;
     padding: 3% 0 0 0;
-    transition: opacity 1s;
+    transition: opacity 2s;
     .company-technology {
-      @include global.flex(space-between, center);
+      @include global.flex(flex-start, center);
       margin: 2% 0;
       .technology-name {
-        margin-left: 20px;
+        margin-left: 50px;
       }
     }
   }
