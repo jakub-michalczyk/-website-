@@ -21,7 +21,7 @@ export class ProjectsTabComponent implements OnInit, AfterViewInit {
   projects: Projects[] = [
     {
       name: 'guess-this-artist',
-      link: 'https://guess-this-artist.netlify.app/start',
+      link: 'https://github.com/jakub-michalczyk/Guess-This-Artist-v2',
       available: false,
     },
     {
