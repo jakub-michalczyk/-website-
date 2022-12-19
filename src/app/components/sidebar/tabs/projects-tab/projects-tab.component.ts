@@ -22,7 +22,7 @@ export class ProjectsTabComponent implements OnInit, AfterViewInit {
     {
       name: 'guess-this-artist',
       link: 'https://guess-this-artist.netlify.app/start',
-      available: true,
+      available: false,
     },
     {
       name: 'website',
