@@ -1,0 +1,34 @@
+@use "/src/app/global/global.scss";
+
+.header {
+  z-index: 3;
+  position: fixed;
+  background-color: global.$white;
+  height: 5rem;
+  top: 0;
+  width: 100%;
+  -webkit-box-shadow: 0px 8px 30px 2px rgba(74, 74, 74, 1);
+  -moz-box-shadow: 0px 8px 30px 2px rgba(74, 74, 74, 1);
+  box-shadow: 0px 8px 30px 2px rgba(74, 74, 74, 1);
+}
+.wrap {
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.project {
+  width: 25%;
+}
+
+@media only screen and (max-width: 900px) {
+  .project {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .project {
+    width: 100%;
+  }
+}

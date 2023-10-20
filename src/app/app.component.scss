@@ -1,15 +1,7 @@
 @use "/src/app/global/global.scss";
 
-.content-wrap {
-  @include global.flex(center, center, column);
-  @include global.fullWidth;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .logo-wrap {
-  position: absolute;
+  position: fixed;
   width: 3rem;
   z-index: 3;
   top: 0;
@@ -18,43 +10,6 @@
   .logo-image {
     max-width: 100%;
   }
-}
-
-.silhouette {
-  position: fixed;
-  z-index: 2;
-  max-height: 100%;
-  transform: scale(0.9);
-}
-
-.main-heading {
-  @include global.stroke(1, global.$black);
-  @include global.flex(flex-start, center, column);
-  @extend .font-kimberley;
-  font-size: 4rem;
-  z-index: 3;
-  text-align: center;
-  color: global.$white;
-  font-weight: normal;
-  .text-indent {
-    color: global.$light_grey;
-    padding-left: 75px;
-  }
-}
-
-.main-btn {
-  @extend .font-comfortaa;
-  display: block;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  z-index: 3;
-  background-color: global.$black;
-  color: global.$white;
-  border-radius: 3px;
-  padding: 10px 15px;
-  font-size: 0.7rem;
-  font-weight: 300;
 }
 
 // Hamburger
@@ -67,10 +22,10 @@
 
 label {
   @include global.flex(flex-start, flex-start, column);
-  position: absolute;
+  position: fixed;
   transition: background-color 0.3s;
-  top: 2%;
-  right: 2%;
+  top: 1%;
+  right: 1%;
   z-index: 9999;
   width: 70px;
   cursor: pointer;
@@ -105,30 +60,5 @@ label {
       width: 50%;
       transform: translate(30px, -11px) rotatez(45deg);
     }
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .main-heading {
-    font-size: 3.5rem;
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .main-heading {
-    text-align: center;
-    font-size: 3rem;
-    span {
-      width: 100%;
-    }
-    .text-indent {
-      padding-left: 0;
-    }
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .main-heading {
-    font-size: 2.5rem;
   }
 }

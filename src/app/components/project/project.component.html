@@ -1,0 +1,14 @@
+<div class="row-wrap"
+     [ngClass]="{'overlayer': data.name}">
+    <a [attr.href]="data.link">
+        <ng-container *ngTemplateOutlet="overlayer;  context:{ $implicit: data }"></ng-container>
+        <img [src]="getImage(data.name)">
+    </a>
+</div>
+
+<ng-template #overlayer
+             let-project>
+    <div class="project-overlayer">
+        <span class="overlayer-label">{{ project.available ? 'see project' : 'see repository'}}</span>
+    </div>
+</ng-template>

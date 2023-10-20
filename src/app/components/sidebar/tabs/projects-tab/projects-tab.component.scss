@@ -4,13 +4,6 @@
   @include global.fullWidth;
 }
 
-@mixin backgroundOverlayer() {
-  background-color: rgba(global.$grey, 0.5);
-  .overlayer-label {
-    opacity: 1;
-  }
-}
-
 .projects {
   .tab-title {
     @extend .font-comfortaa;
@@ -21,25 +14,6 @@
   .placeholder-loading {
     width: 100%;
   }
-  .project-overlayer {
-    @extend .font-comfortaa;
-    @include global.fullWidth;
-    @include global.flex(center, center, column);
-    position: absolute;
-    background-color: rgba(global.$grey, 0);
-    z-index: 2;
-    transition: background-color 0.3s;
-    .overlayer-label {
-      opacity: 0;
-      color: global.$white;
-      background-color: global.$black;
-      border-radius: 4px;
-      padding: 10px 15px;
-      font-size: 0.7rem;
-      font-weight: 300;
-      cursor: pointer;
-    }
-  }
   .projects-wrap {
     @include global.customScroll;
     display: flex;
@@ -47,25 +21,24 @@
     width: 100%;
     overflow-y: scroll;
     max-height: 100%;
-    a {
-      cursor: auto;
-    }
-    img {
-      display: block;
-      max-width: 100%;
-    }
-    .row-wrap {
-      position: relative;
-      width: 50%;
-      &:nth-child(3n + 1) {
-        width: 100%;
-      }
-    }
-    .overlayer {
-      cursor: pointer;
-      &:hover .project-overlayer {
-        @include backgroundOverlayer;
-      }
+  }
+}
+
+.more-projects-info {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+
+  span {
+    border-radius: 50px;
+    border: 1px solid global.$white;
+    padding: 0.4rem 0.9rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: global.$white;
+      color: global.$black;
     }
   }
 }
