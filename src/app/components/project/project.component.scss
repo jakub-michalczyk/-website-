@@ -1,0 +1,45 @@
+@use "/src/app/global/global.scss";
+
+a {
+  cursor: auto;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.row-wrap {
+  position: relative;
+  width: 50%;
+  &:nth-child(3n + 1) {
+    width: 100%;
+  }
+}
+.overlayer {
+  cursor: pointer;
+  &:hover .project-overlayer {
+    background-color: rgba(global.$grey, 0.5);
+    .overlayer-label {
+      opacity: 1;
+    }
+  }
+}
+
+.project-overlayer {
+  @extend .font-comfortaa;
+  @include global.fullWidth;
+  @include global.flex(center, center, column);
+  position: absolute;
+  background-color: rgba(global.$grey, 0);
+  z-index: 2;
+  transition: background-color 0.3s;
+  .overlayer-label {
+    opacity: 0;
+    color: global.$white;
+    background-color: global.$black;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 0.7rem;
+    font-weight: 300;
+    cursor: pointer;
+  }
+}

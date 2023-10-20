@@ -4,11 +4,13 @@ import {
   OnInit,
   AfterViewInit,
 } from '@angular/core';
+import { Router } from '@angular/router';
+import { SidebarService } from 'src/global/sidebar.service';
 
-interface Projects {
+export interface Project {
   name: string;
   link?: string;
-  available: boolean;
+  available?: boolean;
 }
 
 @Component({
@@ -18,7 +20,7 @@ interface Projects {
 })
 export class ProjectsTabComponent implements OnInit, AfterViewInit {
   loaded = false;
-  projects: Projects[] = [
+  projects: Project[] = [
     {
       name: 'guess-this-artist',
       link: 'https://github.com/jakub-michalczyk/Guess-This-Artist-v2',
@@ -41,7 +43,11 @@ export class ProjectsTabComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private sidebarService: SidebarService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -52,9 +58,8 @@ export class ProjectsTabComponent implements OnInit, AfterViewInit {
     }, 500);
   }
 
-  getImage(img: string) {
-    return img
-      ? '/assets/images/' + img + '.jpg'
-      : '/assets/images/placeholder.jpg';
+  openAllProjects() {
+    this.sidebarService.toggleSidebar();
+    this.router.navigate(['/all-projects']);
   }
 }

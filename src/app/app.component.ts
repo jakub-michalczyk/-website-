@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { SidebarService } from 'src/global/sidebar.service';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,20 @@ import { ChangeDetectorRef, Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  sidebarOpen = false;
   loaded = false;
+  sidebarOpen = false;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private sidebarService: SidebarService
+  ) {
+    this.sidebarService.sidebarOpen.subscribe((val) => {
+      this.sidebarOpen = val;
+    });
+  }
 
-  toggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
+  toggle() {
+    this.sidebarService.toggleSidebar();
   }
 
   ngAfterViewInit() {

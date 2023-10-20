@@ -1,0 +1,31 @@
+@use "/src/app/global/global.scss";
+
+.content-wrap {
+  @include global.flex(center, center, column);
+  @include global.fullWidth;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.silhouette {
+  position: fixed;
+  z-index: 2;
+  max-height: 100%;
+  transform: scale(0.9);
+}
+
+.main-btn {
+  @extend .font-comfortaa;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  z-index: 3;
+  background-color: global.$black;
+  color: global.$white;
+  border-radius: 3px;
+  padding: 10px 15px;
+  font-size: 0.7rem;
+  font-weight: 300;
+}

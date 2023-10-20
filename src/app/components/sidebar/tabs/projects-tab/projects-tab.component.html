@@ -6,20 +6,11 @@
     </div>
     <div class="projects-wrap"
          *ngIf="loaded">
-        <div class="row-wrap"
-             [ngClass]="{'overlayer': project.name}"
-             *ngFor="let project of projects">
-            <a [attr.href]="project.link">
-                <ng-container *ngTemplateOutlet="overlayer;  context:{ $implicit: project }"></ng-container>
-                <img [src]="getImage(project.name)">
-            </a>
+        <app-project [data]="project"
+                     *ngFor="let project of projects"></app-project>
+        <div class="more-projects-info">
+            <span (click)="openAllProjects()">see more</span>
         </div>
     </div>
-</div>
 
-<ng-template #overlayer
-             let-project>
-    <div class="project-overlayer">
-        <span class="overlayer-label">{{ project.available ? 'see project' : 'see repository'}}</span>
-    </div>
-</ng-template>
+</div>
